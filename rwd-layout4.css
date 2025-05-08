@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.header {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 15px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+.item {
+  background-color: pink;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+  border-radius: 12px;
+}
+
+
+
+/* headline 和 list 样式保持 */
+.headline {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.item {
+  background-color: pink;
+  width: 280px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* 手機漢堡選單效果 */
+@media (max-width: 768px) {
+
+  .headline {
+    font-size: 22px;
+  }
+
+  .nav {
+    flex-direction: column;
+    background-color: #444;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 300px;
+    transition: max-height 0.5s ease;
+    position: absolute;
+    top: 50px;
+    left: 0;
+  }
+
+  .nav.open {
+    max-height: 300px; /* 根據連結數量調整，避免切斷 */
+    display: flex;
+  }
+
+  .nav a {
+    padding: 10px;
+    border-top: 1px solid #555;
+    color: white;
+    text-decoration: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: #444;
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  
+}
